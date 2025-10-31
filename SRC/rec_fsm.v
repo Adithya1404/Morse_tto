@@ -52,6 +52,7 @@ parameter [7:0] nine = 8'h29;
 parameter [7:0] ds1 = 8'h2a;
 parameter [7:0] ds2 = 8'h2b;
 parameter [7:0] ds3 = 8'h2c;
+parameter [7:0] inv = 8'hfe;
 
 always @(posedge clk or negedge rst) begin
     if (!rst)
@@ -91,7 +92,7 @@ always @(*) begin
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
             3'b001: begin next_state = six; s_out = 8'hff; end
-            3'b010: begin next_state = reset_state; s_out = 8'hff; end
+            3'b010: begin next_state = inv; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'h62; end
             default: begin next_state = reset_state; s_out = 8'hff; end
         endcase
@@ -100,8 +101,8 @@ always @(*) begin
         c:
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
-            3'b001: begin next_state = reset_state; s_out = 8'hff; end
-            3'b010: begin next_state = reset_state; s_out = 8'hff; end
+            3'b001: begin next_state = inv; s_out = 8'hff; end
+            3'b010: begin next_state = inv; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'h63; end
             default: begin next_state = reset_state; s_out = 8'hff; end
         endcase
@@ -130,8 +131,8 @@ always @(*) begin
         f:
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
-            3'b001: begin next_state = reset_state; s_out = 8'hff; end
-            3'b010: begin next_state = reset_state; s_out = 8'hff; end
+            3'b001: begin next_state = inv; s_out = 8'hff; end
+            3'b010: begin next_state = inv; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'h66; end
             default: begin next_state = reset_state; s_out = 8'hff; end
         endcase
@@ -170,7 +171,7 @@ always @(*) begin
         j:
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
-            3'b001: begin next_state = reset_state; s_out = 8'hff; end
+            3'b001: begin next_state = inv; s_out = 8'hff; end
             3'b010: begin next_state = one; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'h6A; end
             default: begin next_state = reset_state; s_out = 8'hff; end
@@ -190,8 +191,8 @@ always @(*) begin
         l:
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
-            3'b001: begin next_state = reset_state; s_out = 8'hff; end
-            3'b010: begin next_state = reset_state; s_out = 8'hff; end
+            3'b001: begin next_state = inv; s_out = 8'hff; end
+            3'b010: begin next_state = inv; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'h6C; end
             default: begin next_state = reset_state; s_out = 8'hff; end
         endcase
@@ -230,8 +231,8 @@ always @(*) begin
         p:
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
-            3'b001: begin next_state = reset_state; s_out = 8'hff; end
-            3'b010: begin next_state = reset_state; s_out = 8'hff; end
+            3'b001: begin next_state = inv; s_out = 8'hff; end
+            3'b010: begin next_state = inv; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'h70; end
             default: begin next_state = reset_state; s_out = 8'hff; end
         endcase
@@ -240,8 +241,8 @@ always @(*) begin
         q:
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
-            3'b001: begin next_state = reset_state; s_out = 8'hff; end
-            3'b010: begin next_state = reset_state; s_out = 8'hff; end
+            3'b001: begin next_state = inv; s_out = 8'hff; end
+            3'b010: begin next_state = inv; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'h71; end
             default: begin next_state = reset_state; s_out = 8'hff; end
         endcase
@@ -251,7 +252,7 @@ always @(*) begin
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
             3'b001: begin next_state = l; s_out = 8'hff; end
-            3'b010: begin next_state = reset_state; s_out = 8'hff; end
+            3'b010: begin next_state = inv; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'h72; end
             default: begin next_state = reset_state; s_out = 8'hff; end
         endcase
@@ -290,7 +291,7 @@ always @(*) begin
         v:
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
-            3'b001: begin next_state = reset_state; s_out = 8'hff; end
+            3'b001: begin next_state = inv; s_out = 8'hff; end
             3'b010: begin next_state = three; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'h76; end
             default: begin next_state = reset_state; s_out = 8'hff; end
@@ -310,8 +311,8 @@ always @(*) begin
         x:
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
-            3'b001: begin next_state = reset_state; s_out = 8'hff; end
-            3'b010: begin next_state = reset_state; s_out = 8'hff; end
+            3'b001: begin next_state = inv; s_out = 8'hff; end
+            3'b010: begin next_state = inv; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'h78; end
             default: begin next_state = reset_state; s_out = 8'hff; end
         endcase
@@ -320,8 +321,8 @@ always @(*) begin
         y:
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
-            3'b001: begin next_state = reset_state; s_out = 8'hff; end
-            3'b010: begin next_state = reset_state; s_out = 8'hff; end
+            3'b001: begin next_state = inv; s_out = 8'hff; end
+            3'b010: begin next_state = inv; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'h79; end
             default: begin next_state = reset_state; s_out = 8'hff; end
         endcase
@@ -331,7 +332,7 @@ always @(*) begin
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
             3'b001: begin next_state = seven; s_out = 8'hff; end
-            3'b010: begin next_state = reset_state; s_out = 8'hff; end
+            3'b010: begin next_state = inv; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'h7A; end
             default: begin next_state = reset_state; s_out = 8'hff; end
         endcase
@@ -451,7 +452,7 @@ always @(*) begin
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
             3'b001: begin next_state = eight; s_out = 8'hff; end
-            3'b010: begin next_state = reset_state; s_out = 8'hff; end
+            3'b010: begin next_state = inv; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'hff; end
             default: begin next_state = reset_state; s_out = 8'hff; end
         endcase
@@ -460,12 +461,20 @@ always @(*) begin
         ds3:
         case (p_in)
             3'b000: begin next_state = state; s_out = 8'hff; end
-            3'b001: begin next_state = reset_state; s_out = 8'hff; end
+            3'b001: begin next_state = inv; s_out = 8'hff; end
             3'b010: begin next_state = two; s_out = 8'hff; end
             3'b011: begin next_state = reset_state; s_out = 8'hff; end
             default: begin next_state = reset_state; s_out = 8'hff; end
         endcase
-
+       
+       inv:
+       case (p_in)
+            3'b000: begin next_state = state; s_out = 8'hff; end
+            3'b001: begin next_state = reset_state; s_out = 8'hff; end
+            3'b010: begin next_state = reset_state; s_out = 8'hff; end
+            3'b011: begin next_state = reset_state; s_out = 8'hff; end
+            default: begin next_state = reset_state; s_out = 8'hff; end
+        endcase
         // ---------------- default ----------------
         default:
         case (p_in)
