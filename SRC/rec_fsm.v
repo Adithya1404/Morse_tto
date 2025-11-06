@@ -8,7 +8,7 @@ output reg [7:0] s_out;
 
 reg [7:0] state;
 reg [7:0] next_state;
-//reg [7:0] s_out;
+
 
 parameter [7:0] reset_state = 8'hff;
 parameter [7:0] a = 8'h00;
@@ -488,10 +488,5 @@ always @(*) begin
     endcase
 end
 
-/*always @(posedge clk or negedge rst) begin
-if(!rst)
-s_out1 <= 'b0;
-else
-s_out1 <= s_out;
-end*/
+
 endmodule
